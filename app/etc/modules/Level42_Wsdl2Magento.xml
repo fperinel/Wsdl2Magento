@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Level42_Wsdl2Magento>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Level42_Wsdl2Magento>
+    </modules>
+</config> 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Wsdl2Magento" default="build">
+
+	<target name="build" depends="clean, sequentialTasks"/>	
+	
+	<target name="clean" description="Nettoyage des dossiers">
+		<!-- Suppression des dossiers -->
+		<delete dir="build"/>
+		<!-- Création des dossiers -->
+		<mkdir dir="${basedir}/build/api"/>
+		<mkdir dir="${basedir}/build/test"/>
+		<mkdir dir="${basedir}/build/logs"/>
+	</target>
+	
+	<target name="sequentialTasks" description="Analyse des sources">
+		<sequential>
+			<antcall target="php-lint"/>
+			<antcall target="pdepend"/>
+			<antcall target="phpmd"/>
+			<antcall target="phpcpd"/>
+			<antcall target="phpcs"/>
+			<antcall target="phpdoc"/>
+		</sequential>
+	</target>
+			
+	<!-- Generate les metriques du code -->	
+	<target name="pdepend" description="Analyse de code et métriques">
+		<exec executable="pdepend">
+			<arg line="--jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/logs/jdepend.svg --overview-pyramid=${basedir}/build/logs/pyramid.svg 
+			 ${basedir}/src" />
+		</exec>
+	</target>	
+	
+	<!-- Génère le rapport d'analyse de code -->
+	<target name="phpmd" description="Détection de la complexité de code">
+		<exec executable="phpmd">
+			<arg line="${basedir}/src xml codesize,unusedcode
+				--reportfile ${basedir}/build/logs/pmd.xml" />
+		</exec>
+	</target>
+	
+	
+	<!-- Génère le rapport d'analyse de code -->
+	<target name="phpcpd" description="Analyse de duplication de code">
+		<exec executable="phpcpd">
+			<arg line="--log-pmd ${basedir}/build/logs/pmd-cpd.xml
+			${basedir}/src" />
+		</exec>
+	</target>
+	
+	
+	<!-- Génère la documentation -->
+	<target name="phpdoc" description="Génération de la documentation">
+		<exec executable="phpdoc">
+			<arg line="-ti Wsdl2Magento
+			  -j off 
+				-d ${basedir}/src
+				-s on
+				-ue
+				-t build/api
+				-o HTML:frames:DOM/earthli
+				-it @author, @version
+				" />
+		</exec>
+	</target>
+	
+	<!-- Vérifie l'indentation du code -->
+	<target name="phpcs" description="Contrôle de l'indentation">
+		<exec executable="phpcs" output="${basedir}/build/logs/checkstyle.xml">
+			<arg line="--report=checkstyle --standard=Zend --extensions=php ${basedir}/src" />
+		</exec>
+	</target>
+	
+	<!-- Verification de syntaxe PHP -->
+	<target name="php-lint" description="Analyse syntaxique">
+		<apply executable="php" failonerror="false">
+			<arg value="-l" />
+			<fileset dir="${basedir}/src">
+				<include name="**/*.php" />
+			</fileset>
+		</apply>
+	</target>
+	
+</project>

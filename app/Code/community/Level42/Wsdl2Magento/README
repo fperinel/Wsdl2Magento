@@ -1,0 +1,5 @@
+﻿Wsdl2Magento version 1.0
+Date 2012-08-23
+
+This module permit to generate classes from WSDL file.
+Very usefull when you use Webservices SOAP with Magento.

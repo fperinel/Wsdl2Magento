@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <modules>
+        <Level42_Wsdl2Magento>
+            <version>0.1.0</version>
+        </Level42_Wsdl2Magento>
+    </modules>
+    
+    <global>
+        <models>
+            <wsdl2Magento>
+                <class>WSDLClass</class>
+                <class>WSDLService</class>
+                <class>WSDLServiceFunction</class>
+                <class>WSDLInterpreter</class>
+                <class>WSDLInterpreterException</class>
+            </wsdl2Magento>
+        </models>
+    </global>
+		       
+</config>

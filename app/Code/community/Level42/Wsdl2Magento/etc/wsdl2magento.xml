@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+
+	<!-- Environnement de configuration par défaut -->
+	<configuration env="default">
+	
+		<webservices>
+			<webservice name="example">
+				<parentSoapClass>SoapClient</parentSoapClass> <!-- Parent class for web services classes -->
+				<wsdl>http://url?wsdl</wsdl> <!-- Webservice WSDL URL  -->
+				<output>../lib/Webservices/Example</output> <!-- Output directory for complexType classes -->
+				<outputBases>../lib/Webservices/Example/Base</outputBases> <!-- Output directory for complexType base classes -->
+				<namespace>Webservices_Example_</namespace> <!-- Output directory for endpoint services classes -->
+				<namespaceBases>Webservices_Example_Base_</namespaceBases> <!-- Output directory for endpoint services base classes -->
+			</webservice>			
+		</webservices>
+		
+	</configuration>
+		       
+</configurations>
