@@ -1,30 +1,37 @@
-Wsdl2Magento
-Version 0.1.0
-Date 09/09/2012
+# Wsdl2Magento #
 
-***** Français ***** 
+----------
+**Version 0.1.0**
 
-Description :
-Ce module Magento permet de générer à partir de fichier WSDL les classes correspondantes aux "ComplexType" du Webservice SOAP. Les classes Services sont également créées afin de facilement manipuler les appels aux Webservices.
+**Date 09/09/2012**
 
-Installation : 
-Copier les fichiers à la racine du projet Magento.
+----------
+
+## FranÃ§ais ##
+
+#### Description ####
+Ce module Magento permet de gÃ©nÃ©rer Ã  partir de fichier WSDL les classes correspondantes aux "ComplexType" du Webservice SOAP. Les classes Services sont Ã©galement crÃ©Ã©es afin de facilement manipuler les appels aux Webservices.
+
+#### Installation ####
+
+Copier les fichiers Ã  la racine du projet Magento.
 Modifier le fichier app/code/community/Level42/Wsdl2Magento/etc/wsdl2magento.xml pour configurer les Webservices avec lesquels communiquer.
 
-Il est possible de créer plusieurs blocs "configuration", avec comme balise "env" le nom de l'environnement (dev, int, prod etc...).
+Il est possible de crÃ©er plusieurs blocs "configuration", avec comme balise "env" le nom de l'environnement (dev, int, prod etc...).
 
 <configuration env="dev">
 
-Chaque noeud "webservice" porte un nom unique et contient la configuration des classes à générer.
+Chaque noeud "webservice" porte un nom unique et contient la configuration des classes Ã  gÃ©nÃ©rer.
 
 
+## English ##
 
-***** English ***** 
 
-Description :
+#### Description ####
+
 This Magento module permit to generate "ComplexType" classes from WSDL of SOAP Webservice. Services classes are generated for easily call webservices methods.
 
-Installation : 
+#### Installation ####
 Copu files on the Magento project root.
 Edit app/code/community/Level42/Wsdl2Magento/etc/wsdl2magento.xml file to configure Webservices.
 
