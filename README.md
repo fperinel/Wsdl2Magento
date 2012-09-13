@@ -31,14 +31,12 @@ Chaque noeud "webservice" porte un nom unique et contient la configuration des c
 # English #
 
 ## Description ##
-This Magento module permit to generate "ComplexType" classes from WSDL of SOAP Webservice. Services classes are generated for easily call webservices methods.
+This module for Magento allows to generate "ComplexType" classes from WSDL's SOAP Web Service. Those generated service classes can be easily used to call web services methods.
 
 ## Installation ##
-Copy files on the Magento project root.
-Edit app/code/community/Level42/Wsdl2Magento/etc/wsdl2magento.xml file to configure Webservices.
-
-It's possible to create several "configuration" blocks, with "env" tag wich represent the environment name (dev, int, prod etc...).
+Copy files on the Magento project root. Edit app/code/community/Level42/Wsdl2Magento/etc/wsdl2magento.xml file to configure Webservices.
+It's possible to create several "configuration" blocks, with "env" tag which represent the environment name (dev, int, prod etc...).
 
 <configuration env="dev">
 
-Each "webservice" node will have an unique name and contains configuration to generate classes.
+Each "webservice" node will have a unique name and contains configuration for classes generation.
